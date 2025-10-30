@@ -1,0 +1,1367 @@
+/* Styling umum untuk Body */
+:root {
+    /* Perkiraan tinggi header dan navbar untuk sticky position */
+    --header-height: 120px; /* Tinggi header yang diperbarui */
+    --navbar-height: 80px; /* Tinggi navbar */
+    --total-sticky-height: calc(var(--header-height) + var(--navbar-height));
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #fff;
+    overflow-x: hidden;
+    /* Menambahkan padding ke bagian atas body untuk mengakomodasi header dan navbar yang sticky */
+    /* padding-top: var(--total-sticky-height); */
+}
+
+/* Wrapper untuk Header dan Navbar agar sticky bersama */
+.sticky-header-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 1030; /* Pastikan wrapper ini di atas konten lain */
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* Bagian Header */
+.header-section {
+    background-color: #4b5097; /* Warna biru tua sesuai gambar */
+    color: #fff; /* Warna teks default putih untuk header */
+    font-family: 'Times New Roman', Times, serif;
+    /* position: sticky; (Dihapus karena sudah diatur di sticky-header-wrapper) */
+    /* top: 0; (Dihapus karena sudah diatur di sticky-header-wrapper) */
+    /* z-index: 1030; (Dihapus karena sudah diatur di sticky-header-wrapper) */
+    width: 100%; /* Pastikan membentang penuh */
+    box-sizing: border-box; /* Sertakan padding dalam perhitungan lebar */
+}
+
+.header-left {
+    /* Flexbox untuk logo agar sejajar vertikal jika teks di sampingnya */
+    flex-shrink: 0; /* Mencegah logo mengecil */
+    justify-content: center;
+    padding-top: 10px; /* Padding atas */
+    padding-bottom: 10px; /* Padding bawah */
+}
+
+.logo-polnep {
+    width: 30%; /* Ukuran logo yang lebih proporsional */
+    height: 30%;
+    object-fit: contain;
+    padding: 5px; /* Padding di sekitar logo */
+}
+
+.header-center {
+    flex-grow: 1; /* Memungkinkan bagian tengah mengambil ruang sebanyak mungkin */
+    margin: 0 10px; /* Margin horizontal agar tidak terlalu dekat dengan sisi */
+}
+
+.header-program-title, .header-psdku-title, .header-location-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.text-user {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.profile-pic {
+    width: 80px; /* Ukuran gambar profil yang lebih proporsional */
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.logout-icon-link {
+    color: #fff; /* Warna ikon putih */
+    font-size: 2.5rem; /* Ukuran ikon yang lebih proporsional */
+    margin-left: 10px; /* Jarak dari gambar profil */
+    transition: color 0.3s ease;
+}
+
+.logout-icon-link:hover {
+    color: skyblue; /* Warna kuning saat hover, sesuai dengan tombol Jelajahi */
+    text-decoration: none; /* Hapus underline pada link */
+}
+
+/* Bagian Footer */
+.main-footer {
+    width: 100%; /* Pastikan mengambil lebar penuh */
+    color: #fff; /* Warna teks putih */
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 50px; /* Jarak dari bagian sebelumnya */
+    margin-bottom: 0; /* Pastikan tidak ada margin bawah pada footer utama */
+}
+
+.footer-top-section {
+    background-color: #4e5290; /* Warna abu-abu gelap untuk bagian atas footer */
+    padding-top: 3rem; /* Tambahkan padding ke bagian atas */
+    padding-bottom: 3rem; /* Tambahkan padding ke bagian atas */
+    width: 100%; /* Pastikan mengambil lebar penuh */
+}
+
+.footer-bottom-section {
+    background-color: #343a40; /* Latar belakang sedikit lebih gelap untuk bagian copyright */
+    padding-top: 1.5rem; /* Tambahkan padding atas untuk copyright */
+    padding-bottom: 1.5rem; /* Tambahkan padding bawah untuk copyright */
+    width: 100%; /* Pastikan mengambil lebar penuh */
+}
+
+/* Menyesuaikan padding horizontal untuk setiap kolom di footer atas */
+.footer-col-left,
+.footer-col-center,
+.footer-col-right {
+    padding-left: 30px; /* Jarak 30px di kiri kolom */
+    padding-right: 30px; /* Jarak 30px di kanan kolom */
+}
+
+.footer-logo {
+    max-width: 150px; /* Ukuran logo di footer */
+    height: auto;
+    margin-bottom: 1rem;
+    object-fit: contain;
+    padding: 5px; /* Padding di sekitar logo */
+}
+
+.footer-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #fff;
+    text-align: left; /* Pastikan judul di tengah sejajar kiri */
+}
+
+.footer-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #fff; /* Warna teks paragraf yang lebih terang */
+    text-align: left; /* Pastikan paragraf di tengah sejajar kiri */
+}
+
+.footer-contact-list {
+    padding-left: 0; /* Hapus padding default dari list-unstyled */
+    text-align: left; /* Pastikan daftar kontak sejajar kiri */
+}
+
+.footer-contact-list li {
+    margin-bottom: 0.7rem;
+    font-size: 0.95rem;
+    color: #fff;
+    display: flex; /* Menggunakan flexbox untuk ikon dan teks */
+    align-items: center; /* Pusatkan vertikal */
+}
+
+.footer-icon {
+    margin-right: 10px;
+    color: #fff; /* Warna ikon kuning */
+    font-size: 1.1rem;
+}
+
+.footer-contact-list li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-copyright {
+    font-size: 1rem;
+    color: #ccc;
+    font-weight: bold;
+}
+
+/* Bagian Sidebar Kiri Menu Admin */
+/* Bagian Sidebar Kiri Menu Admin */
+.main-content-wrapper {
+    display: flex;
+    min-height: calc(100vh - var(--total-sticky-height)); /* Mengisi sisa tinggi viewport */
+    width: 90%;
+}
+
+.sidebar-admin {
+    width: 300px; /* Lebar sidebar */
+    background: #0a0633; /* Warna abu-abu gelap sesuai wireframe */
+    color: #fff;
+    transition: all 0.3s;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+    flex-shrink: 0; /* Mencegah sidebar mengecil */
+}
+
+.sidebar-admin .sidebar-header {
+    padding: 20px;
+    background: #2c5c86; /* Warna sedikit lebih gelap untuk header sidebar */
+    text-align: center;
+    border-bottom: 1px solid #666;
+}
+
+.sidebar-admin .sidebar-header h5 {
+    color: #fff;
+    font-weight: bold;
+}
+
+.sidebar-admin ul.components {
+    padding: 0;
+    list-style: none;
+    border-bottom: 1px solid #666;
+}
+
+.sidebar-admin ul li {
+    border-bottom: 1px solid #666; /* Garis pemisah antar item menu */
+}
+
+.sidebar-admin ul li:last-child {
+    border-bottom: none; /* Hapus border bawah pada item terakhir */
+}
+
+.sidebar-admin ul li a {
+    padding: 1.5em 1.5em;
+    font-size: 1.1em;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-admin ul li a:hover {
+    background: #1057ff; /* Warna hover */
+    color: #fff;
+    text-decoration: none;
+}
+
+.sidebar-admin ul li.active > a, .sidebar-admin a[aria-expanded="true"] {
+    color: #fff;
+    background: #1162ad; /* Warna aktif */
+}
+
+.sidebar-admin .sidebar-icon {
+    margin-right: 20px;
+    font-size: 1.2em;
+    width: 25px; /* Lebar tetap untuk ikon */
+    text-align: center;
+}
+
+.sidebar-admin ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 40px !important;
+    background: #287ecf; /* Warna submenu */
+    border-bottom: none; /* Hapus border bawah pada submenu */
+}
+
+.sidebar-admin ul ul a:hover {
+    background: #45bbff; /* Warna hover submenu */
+    color: #000;
+}
+
+.sidebar-admin .dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.content-wrapper {
+    padding: 20px;
+    width: auto;
+}
+
+/* Jenis-jenis background warna */
+/* Kartu Total Mahasiswa */
+.bg-color-blue {
+    background-color: #7272ff;
+}
+
+/* Kartu Total Dosen */
+.bg-color-green {
+    background-color: #1cc254;
+}
+
+/* Kartu Total Mata Kuliah */
+.bg-color-pink {
+    background-color: #c413bb;
+}
+
+/* Kartu Pengumuman Terbaru */
+.bg-color-purple {
+    background-color: #9a5cff;
+}
+
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+/* Halaman ke-1 : homepage.blade.php */
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+/* Teks Selamat Datang, admin dan Waktu (hh:mm:ss) */
+.welcome-section {
+    background-color: transparent; /* Warna abu-abu terang sesuai wireframe */
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.welcome-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.current-time {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* konten Statistik Singkat */
+.short-stats-section {
+    background-color: #f7fcff; /* Warna abu-abu terang sesuai wireframe */
+    border: 1px solid #02085a;
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.stat-card {
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.stat-card.stat-card-full-width {
+    grid-column: 1 / -1; /* Membentang penuh di semua kolom */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.stat-icon {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.stat-card-full-width .stat-icon {
+    font-size: 2em;
+    margin-right: 15px;
+    margin-bottom: 0;
+}
+
+.stat-label {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.stat-value {
+    font-size: 2.5em;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.stat-card-full-width .stat-value {
+    font-size: 2em;
+}
+
+/* konten pengumuman dan konten Berita */
+.announcement-section, .news-section {
+    background-color: #ffffff; /* Warna abu-abu terang sesuai wireframe */
+    border: 2px solid #4845ff;
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.announcement-cards-wrapper, .news-cards-wrapper {
+    display: flex;
+    overflow-x: auto; /* Mengaktifkan scroll horizontal */
+    -webkit-overflow-scrolling: touch; /* Untuk smooth scrolling di iOS */
+    padding-bottom: 15px; /* Ruang untuk scrollbar */
+    gap: 20px; /* Jarak antar kartu */
+}
+
+.announcement-card, .news-card {
+    flex: 0 0 300px; /* Lebar tetap untuk setiap kartu */
+    background-color: #eee; /* Warna latar belakang kartu */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.announcement-card:hover, .news-card:hover {
+    transform: translateY(-5px);
+}
+
+.news-card .card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.card-subtitle {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.card-text {
+    font-size: 0.95rem;
+    color: #555;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.card-link {
+    color: #4b5097; /* Warna link sesuai header */
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.card-link:hover {
+    text-decoration: underline;
+}
+
+a.view-all-link {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #02085a; /* Warna link sesuai header */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    background-color: transparent;
+    border: 3px solid #02085a;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+a.view-all-link:hover {
+    color: #fff; /* Warna lebih gelap saat hover */
+    text-decoration: none;
+    background-color: #4b5097;
+    border: 3px solid #4b5097;
+}
+
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+/* Halaman ke-2 : admin-nextPage/manajemen-pengguna/Mahasiswa/data-mahasiswa.blade.php */
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+/* Konten tampilan halaman Data Mahasiswa (berisi komponen : button "Tambahkan Data", "komponen dropdown show angka 10 dapat diubah menjadi angka 20 dst, jadi dropdown bernilai 20 dapat ditampilkan data lanjut urutan 11 sampai akhir, komponen search "cari NIM, Nama, Email...." serta komponen terakhir berisi tabel data mahasiswa") */
+.data-mahasiswa-section {
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.data-mahasiswa-section .section-title {
+    color: #333;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+.data-mahasiswa-section hr {
+    border-top: 3px solid #0d103b; /* Garis tebal orange gelap */
+}
+
+a.add-data-btn {
+    background-color: #0812C2; /* Warna tombol sesuai header */
+    border-color: #0812C2;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+a.add-data-btn:hover {
+    background-color: #3a3e7a;
+    border-color: #3a3e7a;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.form-control-sm {
+    width: auto;
+    display: inline-block;
+}
+
+.search-input-group .form-control {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.search-input-group .btn {
+    background-color: #f8f9fa;
+    border-color: #ced4da;
+    color: #495057;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.search-input-group .btn:hover {
+    background-color: #0071e2;
+    border: 2px solid #0071e2;
+}
+
+.data-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.data-table thead th {
+    background-color: #4b5097; /* Warna header tabel sesuai wireframe */
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    padding: 12px 15px;
+    border: 1px solid #030303;
+}
+
+.data-table tbody td {
+    padding: 10px 5px;
+    vertical-align: middle;
+    border: 1px solid #414040;
+    color: #333;
+    text-align: center;
+}
+
+.data-table tbody tr:nth-child(even) {
+    background-color: #8ec6fd; /* Warna latar belakang baris genap */
+}
+
+.table-profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #ddd;
+}
+
+
+.table-kegiatan-pic {
+    width: 150px;
+    height: 100px;
+    border-radius: 0;
+    object-fit: cover;
+    border: 1px solid #ddd;
+}
+
+.table-profile-detail {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5em;
+    object-fit: cover;
+    border: 1px solid #ddd;
+}
+
+a.edit-btn {
+    background-color: #17a2b8; /* Bootstrap info color */
+    border-color: #17a2b8;
+    margin-right: 5px;
+}
+
+a.edit-btn:hover {
+    background-color: #138496;
+    border-color: #138496;
+}
+
+a.delete-btn {
+    background-color: #dc3545; /* Bootstrap danger color */
+    border-color: #dc3545;
+}
+
+a.delete-btn:hover {
+    background-color: #c82333;
+    border-color: #c82333;
+}
+
+a.info-btn {
+    background-color: #e0a800; /* Bootstrap warning color */
+    border-color: #e0a800;
+}
+
+a.info-btn:hover {
+    background-color: #977100;
+    border-color: #977100;
+    color: #fff;
+}
+
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+/* Halaman ke-3 : admin-nextPage/manajemen-pengguna/Mahasiswa/form-add-datamahasiswa.blade.php */
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+.form-data-section {
+    background-color: #f0f0f0; /* Warna latar belakang sesuai wireframe */
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.form-data-section .section-title {
+    color: #333;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: left;
+    color: #4b5097; /* Warna judul sesuai wireframe */
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #333;
+}
+
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.form-control:focus {
+    border-color: #4b5097;
+    box-shadow: 0 0 0 0.2rem rgba(75, 80, 151, 0.25);
+}
+
+select.form-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 8px 10px;
+    padding-right: 1.75rem;
+}
+
+.input-group-text {
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+}
+
+.custom-file-label {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    border-right: none;
+}
+
+.custom-file-input:focus ~ .custom-file-label {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+hr.batas-form {
+    border-top: 2px solid #4b5097; /* Garis pemisah sesuai warna tema */
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+a.btn {
+    font-weight: bold;
+    padding: 0.25rem 0.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+a.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+a.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+a.btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #333; /* Warna teks untuk tombol warning */
+}
+
+a.btn-warning:hover {
+    background-color: #e0a800;
+    border-color: #d39e00;
+}
+
+a.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+a.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+/* Halaman ke-4 : admin-nextPage/manajemen-pengguna/Mahasiswa/detail-datamahasiswa.blade.php */
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+.detail-dataMahasiswa-section {
+    background-color: #f0f0f0; /* Warna latar belakang sesuai wireframe */
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.detail-dataMahasiswa-section .section-title {
+    color: #333;
+    font-size: 1.8rem; /* Ukuran font lebih kecil dari judul utama */
+    font-weight: bold;
+    text-align: left;
+    color: #4b5097; /* Warna judul sesuai tema */
+}
+
+.back-button {
+    background-color: #6c757d; /* Warna abu-abu Bootstrap secondary */
+    border-color: #6c757d;
+    font-weight: bold;
+}
+
+.back-button:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+.detail-card {
+    background-color: #fff; /* Warna latar belakang kartu detail */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 30px;
+    margin-top: 20px;
+}
+
+.profile-detail-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #4b5097; /* Border sesuai warna tema */
+}
+
+.student-name {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.student-info {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.detail-row p {
+    margin-bottom: 10px; /* Spasi antar baris detail */
+}
+
+.detail-row strong {
+    color: #333;
+}
+
+.alumni-info {
+    margin-top: 20px;
+}
+
+.alumni-info p {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.alumni-info strong {
+    color: #333;
+    font-size: 1.1rem;
+}
+
+a.edit-data-btn, a.delete-data-btn {
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+button.delete-data-btn {
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+a.edit-data-btn {
+    background-color: #17a2b8; /* Bootstrap info color */
+    border-color: #17a2b8;
+}
+
+a.edit-data-btn:hover {
+    background-color: #138496;
+    border-color: #138496;
+}
+
+a.delete-data-btn {
+    background-color: #dc3545; /* Bootstrap danger color */
+    border-color: #dc3545;
+}
+
+a.delete-data-btn:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+/* Halaman ke-6 : admin-nextPage/manajemen-pengguna/Dosen/form-add-datamahasiswa.blade.php */
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
+.section-subtitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.main-content-list {
+  list-style: disc;
+  padding-left: 20px;
+  margin-bottom: 1.5rem;
+}
+
+
+
+.table-detil-bio {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-detil-bio td {
+    padding: 10px 0;
+}
+
+.table-detil-bio tr:last-child td {
+    border-bottom: none;
+}
+
+.table-detil-bio .info-label {
+    font-weight: bold;
+    width: 25%; /* Sesuaikan lebar kolom label */
+    vertical-align: top;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.table-detil-bio .info-titikkoma {
+    width: 5%;
+}
+
+.table-detil-bio .info-value {
+    width: 100%;
+    text-align: start;
+    font-size: 1rem;
+    padding: 0 2rem;
+}
+
+.table-pengumuman-detail {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5em;
+    object-fit: cover;
+    border: 1px solid #ddd;
+}
+
+.detail-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+/* Halaman Tambah Pengumuman & Edit Pengumuman : */
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+.form-data-section {
+    background-color: #f0f0f0; /* Warna latar belakang sesuai wireframe */
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.form-data-section .section-title {
+    color: #333;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: left;
+    color: #4b5097; /* Warna judul sesuai wireframe */
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #333;
+}
+
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    padding: 10px 15px;
+}
+
+.input-group-text {
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+}
+
+.custom-file-label {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    border-right: none;
+}
+
+.custom-file-input:focus ~ .custom-file-label {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+/* Halaman Detail Pengumuman */
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+.form-data-section {
+    background-color: #f0f0f0; /* Warna latar belakang sesuai wireframe */
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.form-data-section .section-title {
+    color: #333;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: left;
+    color: #4b5097; /* Warna judul sesuai wireframe */
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #333;
+}
+
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    padding: 10px 15px;
+}
+
+.input-group-text {
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+}
+
+.custom-file-label {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    border-right: none;
+}
+
+.custom-file-input:focus ~ .custom-file-label {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.detail-subtitle-pengumuman {
+    font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+
+
+
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+/* Halaman Detail Program Learning Outcome */
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+.detail-card {
+    background-color: #cad2ff; /* Warna latar belakang kartu detail */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 30px;
+    margin-top: 20px;
+}
+
+.detail-subtitle {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.detail-text {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.detail-list {
+    list-style-type: disc; /* Menggunakan bullet point */
+    padding-left: 20px; /* Indentasi untuk list */
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.detail-list li {
+    margin-bottom: 5px;
+}
+
+.detail-email-coe {
+    text-decoration: underline;
+    color: blue;
+}
+
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+/* Halaman Laporan & Monitoring */
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+.monitoring-laporan-section {
+    background-color: #ffffff; /* Warna latar belakang sesuai wireframe */
+    padding: 30px;
+    border-radius: 8px;
+    border: 2px solid #241266;
+}
+
+.monitoring-laporan-section .section-title {
+    color: #333;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: left;
+    color: #4b5097; /* Warna judul sesuai wireframe */
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #333;
+}
+
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    padding: 10px 15px;
+}
+
+/* Styling untuk area laporan */
+.report-display-area {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 12px;
+    margin-top: 30px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    border: 1px solid #e0e0e0;
+}
+
+.report-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #4b5097;
+    display: inline-block;
+}
+
+button.generate-report-btn {
+    background-color: #4b5097; /* Warna tombol sesuai header */
+    border-color: #4b5097;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+button.generate-report-btn:hover {
+    background-color: #3a3e7a;
+    border-color: #3a3e7a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.report-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.chart-container {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    padding: 30px;
+    min-height: 500px; /* Tinggi minimum untuk chart yang lebih besar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.chart-container:hover {
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    transform: translateY(-5px);
+}
+
+.chart-placeholder {
+    width: 100%;
+    height: 500px; /* Tinggi chart yang lebih besar */
+    transition: all 0.3s ease;
+}
+
+.chart-animation {
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsivitas untuk tampilan mobile */
+@media (max-width: 768px) {
+    .chart-container {
+        min-height: 400px;
+        padding: 15px;
+    }
+
+    .chart-placeholder {
+        height: 400px;
+    }
+
+    .report-display-area {
+        padding: 15px;
+    }
+
+    .report-title {
+        font-size: 1.2rem;
+    }
+
+    table.data-table thead th {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    table.data-table tbody td {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .export-buttons-container {
+        flex-direction: column;
+    }
+
+    .export-btn {
+        margin-right: 0 !important;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .generate-report-btn {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+    .form-group {
+        flex-direction: column;
+    }
+
+    .form-group label {
+        margin-bottom: 5px;
+        width: 100% !important;
+    }
+
+    .form-group select {
+        width: 100% !important;
+    }
+}
+
+table.data-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+table.data-table:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+table.data-table thead th {
+    background-color: #4b5097; /* Warna header tabel sesuai wireframe */
+    color: #fff;
+    padding: 12px 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    border: 1px solid #4b5097;
+    vertical-align: middle;
+}
+
+table.data-table tbody td {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+    vertical-align: middle;
+}
+
+table.data-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+table.data-table tbody tr:hover {
+    background-color: #e8eaf6;
+    transition: background-color 0.3s ease;
+}
+
+table.data-table tbody td {
+    padding: 10px 15px;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+table.data-table tbody tr:nth-child(even) {
+    background-color: #e9ecef; /* Warna latar belakang baris genap */
+}
+
+.export-btn {
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.export-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.export-buttons-container {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+button.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+button.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+button.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+button.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+/* Loading Spinner Styles */
+.loading-spinner {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Export Success Message Styles */
+.export-success-message {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #28a745;
+    padding: 15px 20px;
+    font-weight: bold;
+    max-width: 300px;
+}
+
+.loading-spinner p {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #4b5097;
+    font-size: 16px;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(75, 80, 151, 0.2);
+    border-radius: 50%;
+    border-top-color: #4b5097;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
